@@ -235,24 +235,21 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">Blog</a>
+                                   aria-haspopup="true" aria-expanded="false">Products</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
                                     <li>
-                                        <a href="blog-classic.html" class="dropdown-item item-anchor">Blog <span
+                                        <a href="blog-classic.html" class="dropdown-item item-anchor">Add Products <span
                                                 class="badge bg-secondary">pro</span></a>
                                     </li>
                                     <li>
-                                        <a href="blog-grid-with-sidebar.html" class="dropdown-item item-anchor">Blog with Sidebar <span
+                                        <a href="blog-grid-with-sidebar.html" class="dropdown-item item-anchor">View Products <span
                                                 class="badge bg-secondary">pro</span></a>
                                     </li>
                                     <li>
-                                        <a href="single-post-no-sidebar.html" class="dropdown-item item-anchor">Single Post <span
+                                        <a href="single-post-no-sidebar.html" class="dropdown-item item-anchor">Shop <span
                                                 class="badge bg-secondary">pro</span></a>
                                     </li>
-                                    <li>
-                                        <a href="single-post.html" class="dropdown-item item-anchor">Single post with Sidebar <span
-                                                class="badge bg-secondary">pro</span></a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -306,7 +303,21 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>
+
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'registration-url' %}">Register</a>
+
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login-url' %}">Login</a>
+
+                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout-url' %}">Logout</a>
+
+                            </li>
+
                             <li class="nav-item">
                                 <a href="https://templatesjungle.gumroad.com/l/care-beauty-ecommerce-website-template" class="nav-link border px-3">get pro</a>
                             </li>
@@ -338,6 +349,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24">
                                 <use xlink:href="#user"></use>
                             </svg>
+                            {{ user.username }}
                         </a>
                     </li>
                     <li class="search-box">
@@ -354,6 +366,11 @@
 
     </div>
 </nav>
+<p class="text-center">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+</p>
 {% block content %}
 
 {% endblock %}
@@ -439,6 +456,7 @@
                         <li class="menu-item mb-2">
                             <a href="#" class="item-anchor">Contact</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
