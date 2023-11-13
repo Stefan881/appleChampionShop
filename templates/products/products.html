@@ -36,7 +36,10 @@
                                     <h5 class="element-title text-uppercase fs-6 mt-3">
                                         <a href="single-product.html">{{ product.name }}</a>
                                     </h5>
-                                    <a href="#" class="#" data-after="Add to cart"><span>Ksh. {{ product.price }}</span></a>
+                                    <a href="#" class="#" data-after="Add to cart"><span>Ksh. {{ product.price }}</span></a><br>
+                                    <a class="btn btn-outline-danger" href="/products/delete/{{ product.id }}">Delete</a>
+                                    <a class="btn btn-outline-info" href="/products/update/{{ product.id }}">Update</a>
+                                    <a class="btn btn-outline-success" href="/products/pay/{{ product.id }}">Pay</a>
                                 </div>
                             </div>
                         </div>

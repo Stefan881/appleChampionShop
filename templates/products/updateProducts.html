@@ -1,5 +1,24 @@
 {% extends 'master.html' %}
 {% load  static %}
 {% block content %}
-    <h2>Updating Products</h2>
+     <div class="row d-flex col-4 m-auto">
+        <form method="post" action="/products/update/{{ product.id }}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="border-bottom mb-4">Updating product</legend>
+
+                <input value="{{ product.name }}" placeholder="Enter Product name" class="form-control" name="name" type="text"><br>
+                <input value="{{ product.quantity }}" placeholder="Enter Product Quantity" class="form-control" name="quantity" type="text"><br>
+                <input value="{{ product.price }}" placeholder="Enter Product Price" class="form-control" name="price" type="text"><br>
+                <input value="{{ product.description }}" placeholder="Enter Product Description" class="form-control" name="description" type="text"><br>
+                <label>Product Image</label><br>
+                <img src="{% static '../' %}{{ product.image }}" alt="categories" class="product-image img-fluid"><br>
+                <input  class="form-control" name="image" type="file"><br>
+
+            </fieldset>
+            <div class="form-group">
+                <input class="btn btn-info mt-4" value="Update" type="submit">
+            </div>
+        </form>
+    </div>
 {% endblock %}
